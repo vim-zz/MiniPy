@@ -17,11 +17,12 @@ class Minipy_evalCommand(sublime_plugin.TextCommand):
 		for region in view.sel():
 			total += view.substr(region).count("$")
 
+		print("total = ", total)
 		# build a list from 1 to the number of special chars
-		serial_number = list(range(total+1,1))
+		serial_number = list(range(1, total+1))
 		# serial_number.reverse()
-		# serial_number = rev(serial_number)
-		# print(repr(serial_number))
+		serial_number = rev(serial_number)
+		print(repr(serial_number))
 
 		# replace each special char $ with the next index from serial_number list
 		# and eval the expression
