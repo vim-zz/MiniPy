@@ -2,11 +2,6 @@ from math import *
 from random import *
 import re
 import sublime, sublime_plugin
-
-import sys 
-import os
- # arrow-dists is the folder in our plugin
-sys.path.append(os.path.join(os.path.dirname(__file__), "arrow"))
 import arrow
 
 
