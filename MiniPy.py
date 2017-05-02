@@ -1,10 +1,26 @@
 from math import *
 from random import *
+from hashlib import md5 as _md5
+from hashlib import sha1 as _sha1
 import re
 import sublime
 import sublime_plugin
 
 # reverse() in python3
+
+
+def _hashfunc(hashfunc, obj):
+    s = str(obj)
+    h = hashfunc(s.encode('utf-8'))
+    return g.hexdigest()
+
+
+def md5(obj):
+    return _hashfunc(_md5, obj)
+
+
+def sha1(obj):
+    return _hashfunc(_sha1, obj)
 
 
 def rev(s):
