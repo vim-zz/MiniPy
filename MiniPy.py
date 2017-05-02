@@ -23,6 +23,16 @@ def sha1(obj):
     return _hashfunc(_sha1, obj)
 
 
+def set_intersect(itr0, itr1):
+    s0, s1 = set(itr0), set(itr1)
+    return s0.intersection(s1)
+
+
+def set_difference(itr0, itr1):
+    s0, s1 = set(itr0), set(itr1)
+    return s0 - s1
+
+
 def rev(s):
     return s[::-1]
 
