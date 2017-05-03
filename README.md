@@ -6,7 +6,7 @@ Sublime Text 3 plugin - inline python evaluation.
 
 ### As a calculator
 
-For example you can write 3.14*0.6 and get the result (1.884) in your text.
+For example you can write `3.14*0.6` and get the result `1.884` in your text.
 It also supports multiple selection.
 
 ### Incremnt counter at cursor positions
@@ -68,7 +68,7 @@ While you can just use the regular python to do set computations, there's a few 
 
 The functions takes two iterable arguments, which are turned into sets, and the computations are performed:
 
-	set_intersect('foo bar', 'foo baz')  -> {'b', 'a', ' ', 'o', 'f'}
+	set_intersect('foo bar', 'foo baz')  -> {'b', ' ', 'a', 'f', 'o'}
 	set_intersect('foo baz', 'foo bar')  -> {'b', 'a', ' ', 'o', 'f'}
 	set_difference('foo baz', 'foo bar') -> {'z'}
 	set_difference('foo bar', 'foo baz') -> {'r'}
