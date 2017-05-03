@@ -7,7 +7,6 @@ import re
 import sublime
 import sublime_plugin
 
-# reverse() in python3
 
 def dnow():
     return datetime.datetime.strftime(datetime.datetime.now(), '%d/%m/%Y')
@@ -45,6 +44,7 @@ def set_difference(itr0, itr1):
     return s0 - s1
 
 
+# reverse() in python3
 def rev(s):
     return s[::-1]
 
