@@ -61,6 +61,21 @@ The functions `dnow`, `tnow` and `dtnow` return respectively the current string-
 
 Notice that you need to have parenthesis after the function name to invoke the function call.
 
+
+### Computing with sets
+
+While you can just use the regular python to do set computations, there's a few functions included for convinience: `set_intersect`, `set_difference` and `set_symdiff`.
+
+The functions takes two iterable arguments, which are turned into sets, and the computations are performed:
+
+	set_intersect('foo bar', 'foo baz') = {'b', 'a', ' ', 'o', 'f'}
+	set_intersect('foo baz', 'foo bar') = {'b', 'a', ' ', 'o', 'f'}
+	set_difference('foo baz', 'foo bar') = {'z'}
+	set_difference('foo bar', 'foo baz') = {'r'}
+	set_symdiff('foo baz', 'foo bar') = {'z', 'r'}
+	set_symdiff('foo bar', 'foo baz') = {'z', 'r'}
+
+
 ### Formatting numbers
 
 The fnuction `formatnum` formats numbers, and takes two mandatory and an optional argument:
