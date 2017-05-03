@@ -2,6 +2,7 @@ from math import *
 from random import *
 from hashlib import md5 as _md5
 from hashlib import sha1 as _sha1
+from collections import Counter
 import datetime
 import re
 import sublime
