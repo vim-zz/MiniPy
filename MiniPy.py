@@ -49,6 +49,29 @@ def set_symdiff(itr0, itr1):
     return s0.symmetric_difference(s1)
 
 
+def formatnum(num, digits, scientificNotation=None):
+
+    def normalFormatting(num, digits):
+        return ('{:.%f}' % digits).format(num)
+
+    def scientificFormatting(num, digits):
+        return ('{:.%e}' % digits).format(num)
+
+    if scientificNotation is False:
+        return normalFormatting(num, digits)
+
+    if scientificNotation is True:
+        return scientificFormatting(num, digits)
+
+    if scientificNotation is None:
+        scientificNotation = 8
+
+    if isinstance(scientificNotation, int):
+        if len(normalFormatting(num, digits)) > scientificNotation:
+            return scientificFormatting(num, digits)
+        return normalFormatting(num, digits)
+
+
 # reverse() in python3
 def rev(s):
     return s[::-1]
