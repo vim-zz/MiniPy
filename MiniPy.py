@@ -23,7 +23,7 @@ def dtnow():
 def _hashfunc(hashfunc, obj):
     s = str(obj)
     h = hashfunc(s.encode('utf-8'))
-    return g.hexdigest()
+    return h.hexdigest()
 
 
 def md5(obj):
