@@ -41,9 +41,9 @@ Besides that, you have the following imports avaiable:
 
 So you can do:
 
-	Counter(('Ann', 'Bob', 'Bob', 'Michael')) = Counter({'Bob': 2, 'Ann': 1, 'Michael': 1})
-	Counter(('Ann', 'Bob', 'Bob', 'Michael', 'michael')) = Counter({'Bob': 2, 'Ann': 1, 'michael': 1, 'Michael': 1})
-	Counter(name.title() for name in ('Ann', 'Bob', 'Bob', 'Michael', 'michael')) = Counter({'Bob': 2, 'Michael': 2, 'Ann': 1})
+	Counter(('Ann', 'Bob', 'Bob', 'Michael'))                                     -> Counter({'Bob': 2, 'Ann': 1, 'Michael': 1})
+	Counter(('Ann', 'Bob', 'Bob', 'Michael', 'michael'))                          -> Counter({'Bob': 2, 'Ann': 1, 'michael': 1, 'Michael': 1})
+	Counter(name.title() for name in ('Ann', 'Bob', 'Bob', 'Michael', 'michael')) -> Counter({'Bob': 2, 'Michael': 2, 'Ann': 1})
 
 ### Computing checksums
 
@@ -55,9 +55,9 @@ The python `hashlib.md5` and `hashlib.sha1` functions are avaiable under the nam
 
 The functions `dnow`, `tnow` and `dtnow` return respectively the current string-formatted date, time and datetime:
 
-	dnow() = 03/05/2017
-	tnow() = 09:36:03
-	dtnow() = 03/05/2017 09:36:03
+	dnow()  -> 03/05/2017
+	tnow()  -> 09:36:03
+	dtnow() -> 03/05/2017 09:36:03
 
 Notice that you need to have parenthesis after the function name to invoke the function call.
 
@@ -68,12 +68,12 @@ While you can just use the regular python to do set computations, there's a few 
 
 The functions takes two iterable arguments, which are turned into sets, and the computations are performed:
 
-	set_intersect('foo bar', 'foo baz') = {'b', 'a', ' ', 'o', 'f'}
-	set_intersect('foo baz', 'foo bar') = {'b', 'a', ' ', 'o', 'f'}
-	set_difference('foo baz', 'foo bar') = {'z'}
-	set_difference('foo bar', 'foo baz') = {'r'}
-	set_symdiff('foo baz', 'foo bar') = {'z', 'r'}
-	set_symdiff('foo bar', 'foo baz') = {'z', 'r'}
+	set_intersect('foo bar', 'foo baz')  -> {'b', 'a', ' ', 'o', 'f'}
+	set_intersect('foo baz', 'foo bar')  -> {'b', 'a', ' ', 'o', 'f'}
+	set_difference('foo baz', 'foo bar') -> {'z'}
+	set_difference('foo bar', 'foo baz') -> {'r'}
+	set_symdiff('foo baz', 'foo bar')    -> {'z', 'r'}
+	set_symdiff('foo bar', 'foo baz')    -> {'z', 'r'}
 
 
 ### Formatting numbers
@@ -93,18 +93,18 @@ scientificNotation
 
 Example usage:
 
-	formatnum(0.123456789, 4) = 0.1235
-	formatnum(0.123456789, 9) = 1.234567890e-01
-	formatnum(123456789.0, 9) = 1.234567890e+08
-	formatnum(123456789.0, 2) = 1.23e+08
-	formatnum(123.456789, 12) = 1.234567890000e+02
-	formatnum(123.456789, 12, False) = 123.456789000000
-	formatnum(123.456789, 3) = 123.457
-	formatnum(3.14159, 4) = 3.1416
-	formatnum(3.14159, 3) = 3.142
-	formatnum(3.14159, 2) = 3.14
-	formatnum(3.14159, 2, True) = 3.14e+00
-	formatnum(3.141592653589793238462643383279502884197169399375105820974944, 3) = 3.142
+	formatnum(0.123456789, 4)                -> 0.1235
+	formatnum(0.123456789, 9)                -> 1.234567890e-01
+	formatnum(123456789.0, 9)                -> 1.234567890e+08
+	formatnum(123456789.0, 2)                -> 1.23e+08
+	formatnum(123.456789, 12)                -> 1.234567890000e+02
+	formatnum(123.456789, 12, False)         -> 123.456789000000
+	formatnum(123.456789, 3)                 -> 123.457
+	formatnum(3.14159, 4)                    -> 3.1416
+	formatnum(3.14159, 3)                    -> 3.142
+	formatnum(3.14159, 2)                    -> 3.14
+	formatnum(3.14159, 2, True)              -> 3.14e+00
+	formatnum(3.141592653589793238462643, 3) -> 3.142
 
 
 ## Usage
