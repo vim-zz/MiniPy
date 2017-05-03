@@ -2,11 +2,23 @@ from math import *
 from random import *
 from hashlib import md5 as _md5
 from hashlib import sha1 as _sha1
+import datetime
 import re
 import sublime
 import sublime_plugin
 
 # reverse() in python3
+
+def dnow():
+    return datetime.datetime.strftime(datetime.datetime.now(), '%d/%m/%Y')
+
+
+def tnow():
+    return datetime.datetime.strftime(datetime.datetime.now(), '%H:%M:%S')
+
+
+def dtnow():
+    return datetime.datetime.strftime(datetime.datetime.now(), '%d/%m/%Y %H:%M:%S')
 
 
 def _hashfunc(hashfunc, obj):
