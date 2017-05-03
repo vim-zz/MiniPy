@@ -44,6 +44,11 @@ def set_difference(itr0, itr1):
     return s0 - s1
 
 
+def set_symdiff(itr0, itr1):
+    s0, s1 = set(itr0), set(itr1)
+    return s0.symmetric_difference(s1)
+
+
 # reverse() in python3
 def rev(s):
     return s[::-1]
