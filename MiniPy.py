@@ -53,10 +53,10 @@ def set_symdiff(itr0, itr1):
 def formatnum(num, digits, scientificNotation=None):
 
     def normalFormatting(num, digits):
-        return ('{:.%f}' % digits).format(num)
+        return ('{:.%df}' % digits).format(num)
 
     def scientificFormatting(num, digits):
-        return ('{:.%e}' % digits).format(num)
+        return ('{:.%de}' % digits).format(num)
 
     if scientificNotation is False:
         return normalFormatting(num, digits)
