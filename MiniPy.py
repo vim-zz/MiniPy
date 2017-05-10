@@ -23,7 +23,7 @@ def cumprod(lst, use_logsum=False):
         return toReturn
 
     if use_logsum:
-        return [exp(el_log) for el_log in cumsum((log(el) for el in lst))]
+        return [exp(el_log) for el_log in cumsum([log(el) for el in lst])]
     else:
         return do_cumprod(lst)
 
