@@ -69,7 +69,7 @@ def set_symdiff(itr0, itr1):
     return s0.symmetric_difference(s1)
 
 
-def formatnum(num, digits, scientificNotation=None):
+def formatnum(num, digits=8, scientificNotation=None):
 
     def normalFormatting(num, digits):
         return ('{:.%df}' % digits).format(num)
