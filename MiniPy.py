@@ -18,7 +18,7 @@ def cumprod(lst, use_logsum=False):
         tmp = 1
         toReturn = list()
         for el in lst:
-            tmo *= el
+            tmp *= el
             toReturn.append[tmp]
         return toReturn
 
