@@ -19,7 +19,7 @@ def cumprod(lst, use_logsum=False):
         toReturn = list()
         for el in lst:
             tmp *= el
-            toReturn.append[tmp]
+            toReturn.append(tmp)
         return toReturn
 
     if use_logsum:
