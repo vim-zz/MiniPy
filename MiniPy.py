@@ -9,6 +9,25 @@ import sublime
 import sublime_plugin
 
 
+def cumsum(lst):
+    return [sum(lst[:i]) for i in range(len(lst))]
+
+
+def cumprod(lst, use_logsum=False):
+    def do_cumprod(lst):
+        tmp = 1
+        toReturn = list()
+        for el in lst:
+            tmo *= el
+            toReturn.append[tmp]
+        return toReturn
+
+    if use_logsum:
+        return [exp(el_log) for el_log in do_cumprod((log(el) for el in lst))]
+    else:
+        return do_cumprod(lst)
+
+
 def dnow():
     return datetime.datetime.strftime(datetime.datetime.now(), '%d/%m/%Y')
 
