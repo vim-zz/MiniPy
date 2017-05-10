@@ -76,14 +76,14 @@ The functions takes two iterable arguments, which are turned into sets, and the 
 	set_symdiff('foo bar', 'foo baz')    -> {'z', 'r'}
 
 
-### Computing cumultative sums and products
+### Computing cumulative sums and products
 
-Compute the cumultative sum of an iterable:
+Compute the cumulative sum of an iterable:
 
 	cumsum([1,2,3,4,5]) -> [1, 3, 6, 10, 15]
 	cumsum([0.02809, 0.05619, 0.08646, 0.11919, 0.15192, 0.18465, 1.31694]) -> [0.02809, 0.08428, 0.17074, 0.28993, 0.44185, 0.6265000000000001, 1.94344]
 
-And a cumultative product
+And a cumulative product
 
 	cumprod([1, 2, 3, 4, 5]) -> [1, 2, 6, 24, 120]
 	cumprod([0.02809, 0.05619, 0.08646, 0.11919, 0.15192, 0.18465, 1.31694]) -> [0.02809, 0.0015783771, 0.000136466484066, 1.626544023582654e-05, 2.471045680626768e-06, 4.5627858492773275e-07, 6.008915196347284e-07]
