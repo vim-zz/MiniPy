@@ -76,6 +76,26 @@ The functions takes two iterable arguments, which are turned into sets, and the 
 	set_symdiff('foo bar', 'foo baz')    -> {'z', 'r'}
 
 
+### Computing cumulative sums and products
+
+Compute the cumulative sum of an iterable:
+
+	cumsum([1,2,3,4,5]) -> [1, 3, 6, 10, 15]
+	cumsum([0.02809, 0.05619, 0.08646, 0.11919, 0.15192, 0.18465, 1.31694]) -> [0.02809, 0.08428, 0.17074, 0.28993, 0.44185, 0.6265000000000001, 1.94344]
+
+And a cumulative product
+
+	cumprod([1, 2, 3, 4, 5]) -> [1, 2, 6, 24, 120]
+	cumprod([0.02809, 0.05619, 0.08646, 0.11919, 0.15192, 0.18465, 1.31694]) -> [0.02809, 0.0015783771, 0.000136466484066, 1.626544023582654e-05, 2.471045680626768e-06, 4.5627858492773275e-07, 6.008915196347284e-07]
+
+But doing products of a lot of small numbers are prone to errors, so we can use a math trick:<br>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\exp&space;\left[&space;\sum&space;\log&space;\left[&space;A&space;\right]&space;\right]&space;=&space;\prod&space;A" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\exp&space;\left[&space;\sum&space;\log&space;\left[&space;A&space;\right]&space;\right]&space;=&space;\prod&space;A" title="\exp \left[ \sum \log \left[ A \right] \right] = \prod A" /></a>, where _A_ is the iterable. This will increase the numerical stability, as seen in this example:
+
+	cumprod([1e-8, 1e-9, 1e-10, 1e-11, 1e-12, 1e-13, 1e-14]) -> [1e-08, 1e-17, 1e-27, 1e-38, 9.999999999999999e-51, 9.999999999999999e-64, 1e-77]
+	cumprod([1e-8, 1e-9, 1e-10, 1e-11, 1e-12, 1e-13, 1e-14], use_logsum=True) -> [9.999999999999982e-09, 9.99999999999999e-18, 1.0000000000000022e-27, 9.999999999999936e-39, 9.999999999999944e-51, 1.0000000000000049e-63, 9.999999999999967e-78]
+	cumprod([1e-8, 1e-9, 1e-10, 1e-11, 1e-12, 1e-13, 1e-14], use_logsum=True) -> # same result as above.
+
+
 ### Formatting numbers
 
 The fnuction `formatnum` formats numbers, and takes two mandatory and an optional argument:

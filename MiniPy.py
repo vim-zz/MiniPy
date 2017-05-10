@@ -9,6 +9,25 @@ import sublime
 import sublime_plugin
 
 
+def cumsum(lst):
+    return [sum(lst[:i]) for i in range(1, len(lst)+1)]
+
+
+def cumprod(lst, use_logsum=False):
+    def do_cumprod(lst):
+        tmp = 1
+        toReturn = list()
+        for el in lst:
+            tmp *= el
+            toReturn.append(tmp)
+        return toReturn
+
+    if use_logsum:
+        return [exp(el_log) for el_log in cumsum([log(el) for el in lst])]
+    else:
+        return do_cumprod(lst)
+
+
 def dnow():
     return datetime.datetime.strftime(datetime.datetime.now(), '%d/%m/%Y')
 
@@ -50,7 +69,7 @@ def set_symdiff(itr0, itr1):
     return s0.symmetric_difference(s1)
 
 
-def formatnum(num, digits, scientificNotation=None):
+def formatnum(num, digits=8, scientificNotation=None):
 
     def normalFormatting(num, digits):
         return ('{:.%df}' % digits).format(num)
