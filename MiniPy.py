@@ -10,7 +10,7 @@ import sublime_plugin
 
 
 def cumsum(lst):
-    return [sum(lst[:i]) for i in range(len(lst))]
+    return [sum(lst[:i]) for i in range(1, len(lst)+1)]
 
 
 def cumprod(lst, use_logsum=False):
