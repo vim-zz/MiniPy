@@ -3,6 +3,7 @@ from random import *
 from hashlib import md5 as _md5
 from hashlib import sha1 as _sha1
 from collections import Counter
+from dateutil import tz
 import datetime
 import re
 import sublime
@@ -95,6 +96,12 @@ def formatnum(num, digits=8, scientificNotation=None):
 # reverse() in python3
 def rev(s):
     return s[::-1]
+
+
+# timestamp (unix time since epoch) to string
+def ts(timestamp_sec, fmt='%Y-%m-%dT%H:%M:%S.%f%z'):
+    tzinfo = tz.tzutc()
+    return datetime.datetime.utcfromtimestamp( timestamp_sec ).replace(tzinfo=tzinfo).strftime( fmt )
 
 
 class Minipy_evalCommand(sublime_plugin.TextCommand):

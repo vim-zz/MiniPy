@@ -98,7 +98,7 @@ But doing products of a lot of small numbers are prone to errors, so we can use 
 
 ### Formatting numbers
 
-The fnuction `formatnum` formats numbers, and takes two mandatory and an optional argument:
+The function `formatnum` formats numbers, and takes two mandatory and an optional argument:
 
 num
 :	The number bieng formatted.
@@ -126,6 +126,12 @@ Example usage:
 	formatnum(3.14159, 2, True)              -> 3.14e+00
 	formatnum(3.141592653589793238462643, 3) -> 3.142
 
+### Convert Timestamp to human readable time
+
+The function `ts` transform timestamp as unix time, which is seconds since epoch to string using supplied format
+
+	ts(1478002058.368)               ->  2016-11-01T12:07:38.368000+0000
+	ts(1478002058.368, '%Y%m%d')     ->  20161101
 
 ## Usage
 
