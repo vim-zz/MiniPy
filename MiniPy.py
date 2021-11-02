@@ -7,6 +7,7 @@ import datetime
 import re
 import sublime
 import sublime_plugin
+import time
 
 
 def cumsum(lst):
@@ -38,6 +39,10 @@ def tnow():
 
 def dtnow():
     return datetime.datetime.strftime(datetime.datetime.now(), '%d/%m/%Y %H:%M:%S')
+
+# return current time in seconds since epoch 
+def tsnow():
+    return int(time.time())
 
 
 def _hashfunc(hashfunc, obj):
